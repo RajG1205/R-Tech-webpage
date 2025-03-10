@@ -1,0 +1,301 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-TECH</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #000000;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .logo {
+            width: 200px;
+            height: 130;
+        }
+        header img {
+            width: 50px;
+            height: auto;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .btn {
+            background: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .comparison-box {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        .btn {
+            background: #ff5722;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e64a19;
+            .details-link {
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\logo.png" alt="R-TECH Logo" class="logo">
+        <h1>R-TECH - IPHONE REVIEWS AND COMPARISON</h1>
+    </header>
+    <div class="comparison-box">
+        <h2>Compare iPhones</h2>
+        <div id="selectors">
+        </div>
+        <button class="btn" onclick="compareIphones()">Compare</button>
+        <table id="comparison-table">
+            <tr>
+                <th>iPhone Model</th>
+                <th>Key Features</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const iphones = [
+            "The iPhone", "iPhone 3G", "iPhone 3GS", "iPhone 4" , "iPhone 4S", "iPhone 5","iPhone 5C & 5S", 
+            "iPhone 6 & 6 plus", "iPhone 6S & 6S plus", "iPhone SE", "iPhone 7 & 7 Plus", "iPhone 8 & 8 Plus", "iPhone X", "iPhone XS & XS Max","iPhone XR",
+            "iPhone 11 Series", "iPhone SE2", "iPhone 12 Series", "iPhone 13 Series", "iPhone SE3", "iPhone 14 Series", 
+            "iPhone 15 Series", "iPhone 16 Series"
+        ];
+        
+        function createSelectors() {
+            const container = document.getElementById("selectors");
+            for (let i = 0; i < 2; i++) {
+                let select = document.createElement("select");
+                select.id = `iphone${i + 1}`;
+                iphones.forEach(model => {
+                    let option = document.createElement("option");
+                    option.value = model;
+                    option.textContent = model;
+                    select.appendChild(option);
+                });
+                container.appendChild(select);
+            }
+        }
+        
+        function compareIphones() {
+    let table = document.getElementById("comparison-table");
+    table.innerHTML = `<tr><th>iPhone Model</th><th>Key Features</th></tr>`;
+    
+    for (let i = 1; i <= 2; i++) {
+        let phone = document.getElementById(`iphone${i}`).value;
+        if (phone) {
+            let row = table.insertRow();
+            row.insertCell(0).innerText = phone;
+            row.insertCell(1).innerHTML = `iPhone is good. <a href="C:\Users\VICTUS\Desktop\year Certificate\web page.html" class="details-link">Learn More</a>`;
+        }
+    }
+}
+
+        
+        createSelectors();
+    </script>
+    <div class="container">
+        <div class="card">
+            <h2>the iPhone (2007)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 1.jpg" alt="the iPhone">
+            <p>The first-ever iPhone was a game-changer. It had a 3.5-inch touchscreen, a 2MP camera, and no App Store—but it set the stage for modern smartphones. Despite its lack of 3G connectivity, it was a groundbreaking device that redefined the mobile industry.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 3G  (2008)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 3G.avif" alt="iPhone 3G">
+            <p>The iPhone 3G introduced faster data speeds and, most importantly, the App Store! This allowed users to install third-party apps, making the iPhone a more versatile device.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 3GS (2009)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 3GS.avif" alt="iPhone 3GS">
+            <p>The 3GS brought a faster processor, improved graphics, and video recording. It made the iPhone smoother and more capable, paving the way for future updates.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 4 (2010)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 4.jpg" alt="iPhone 4">
+            <p>Apple’s first major redesign featured a stunning Retina Display (326 PPI), a glass and stainless steel body, and a front-facing camera for FaceTime. It also introduced the A4 chip for better performance.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 4S (2011)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 4S.avif" alt="iPhone 4S">
+            <p> visually similar to the iPhone 4, the 4S featured a faster A5 chip, a much-improved 8MP camera, and introduced Siri, Apple’s AI assistant.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 5 (2012)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 5.jpg" alt="iPhone 5">
+            <p>Apple finally increased the screen size to 4 inches, made the iPhone thinner, and replaced the 30-pin connector with the Lightning port.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 5C & 5S (2013)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 5S.avif" alt="iPhone 5C & 5S">
+            <p>The iPhone 5C was a budget-friendly option with a colorful plastic body.
+               The iPhone 5S introduced the Touch ID fingerprint sensor, a 64-bit A7 processor, and a dual-tone flash for better photography.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 6 & 6 Plus (2014)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 6.jpg" alt="iPhone 6 & 6 Plus">
+            <p>Apple finally jumped into bigger screens—the iPhone 6 had a 4.7-inch display, while the 6 Plus had a 5.5-inch display. This generation also introduced Apple Pay.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 6S & 6S Plus (2015)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 6S.avif" alt="iPhone 6S & 6S Plus">
+            <p>With the A9 chip, a 12MP camera, and 3D Touch (pressure-sensitive display), the 6S series was faster and more refined.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone SE (2016)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone SE.avif" alt="iPhone SE">
+            <p>Apple revived the smaller 4-inch screen with iPhone SE, packing the power of the 6S in a compact and affordable form.</p>
+        </div>   
+        <div class="card">
+            <h2>iPhone 7 & 7 Plus (2016)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 7.jpg" alt="iPhone 7 & 7 Plus">
+            <p>The iPhone 7 introduced stereo speakers, water resistance, and removed the headphone jack.
+                The iPhone 7 Plus was Apple’s first dual-camera phone, bringing Portrait Mode.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 8 & 8 Plus (2017)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 8.jpg" alt="iPhone 8 & 8 Plus">
+            <p>With a glass back for wireless charging, an A11 Bionic chip, and True Tone display, the iPhone 8 was a polished version of the 7 series.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone X (2017)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone X.avif" alt="iPhone X">
+            <p>To mark the iPhone’s 10th anniversary, Apple introduced the iPhone X, featuring:
+                 Edge-to-edge OLED display
+                Face ID (no home button)
+                 Animoji & improved dual cameras</p>
+        </div>
+        <div class="card">
+            <h2>iPhone XS & XS Max (2018)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone XS.jpg" alt="iPhone XS & XS Max">
+            <p>The XS series refined the iPhone X with a Super Retina OLED display, a more powerful A12 chip, and a 512GB storage option.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone XR (2018)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone XR.jpg" alt="iPhone XR">
+            <p>A cheaper alternative to the XS, the iPhone XR featured a Liquid Retina LCD display, a single-lens camera, and a variety of colors.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 11 Series (2019)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 11.jpg" alt="iPhone 11">
+            <p>The iPhone 11 featured a dual-camera system with Night Mode, while the Pro models introduced a triple-camera system.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone SE2 (2020)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone SE2.jpg" alt="iPhone SE2">
+            <p>The iPhone SE2 packed the power of the iPhone 11 into an iPhone 8 body, making it a great budget option.</p>
+        </div>
+         <div class="card">
+            <h2>iPhone 12 Series (2020)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 12.jpg" alt="iPhone 12">
+            <p>This generation introduced:
+                5G connectivity
+                MagSafe for wireless charging
+                Ceramic Shield for durability</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 13 Series (2021)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 13.jpg" alt="iPhone 13">
+            <p>The iPhone 13 Pro models had a 120Hz ProMotion display, better cameras, and longer battery life.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone SE3 (2022)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone SE3.jpg" alt="iPhone SE3">
+            <p>The third-gen iPhone SE brought 5G and the A15 Bionic chip but kept the old iPhone 8 design.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 14 Series (2022)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 14.jpg" alt="iPhone 14">
+            <p>Major innovations included:
+                Dynamic Island (interactive notch on Pro models)
+                Emergency SOS via satellite
+                48MP camera upgrade</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 15 Series (2023)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 15.jpg" alt="iPhone 15">
+            <p>Apple finally ditched Lightning for USB-C, introduced a Titanium design for the Pro models, and improved camera zoom.</p>
+        </div>
+        <div class="card">
+            <h2>iPhone 16 Series (2025)</h2>
+            <img src="C:\Users\VICTUS\Desktop\WORKSHOP LECTURE\WEB PAGE PHOTOS\iphone 16.jpg" alt="iPhone 16">
+            <p>AI-driven features, A18 chip, and enhanced cameras.</p>
+        </div>
+    </div>
+
+</body>
+</html>
